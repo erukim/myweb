@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "chalk": "^4.1.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "discord.js": "^14.7.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.40",
+    "passport": "^0.6.0",
+    "path": "^0.12.7",
+    "strip-ansi": "^6.0.1",
+    "winston": "^3.8.2"
+  },
+  "name": "erukim-web",
+  "version": "1.0.0",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,40 @@
+<html lang="ko">
+<head>
+  <%- include('../../../partials/space/head'); %>
+</head>
+<body>
+  <header>
+    <%- include('../../../partials/space/header'); %>
+</header>
+    <div class="border-none h-auto pb-12 pt-28 font-medium min-h-screen">
+        <div class="container-sm !max-w-[1450px]">
+        <% if(msg.length == 0) { %>
+            <div class="text-3xl text-center">
+              <p>등록된 공지가 없습니다!</p>
+            </div>
+          </div>
+         <% } %>
+        <% msg.forEach(m => { %>
+          <div class="rounded-xl mt-5 mb-5 shadow-lg min-h-[150px] p-4">
+            <div class="!flex mb-4">
+                <span class="rounded-full inline-flex items-center justify-center text-center relative w-10 h-10">
+                  <img src="<%= m.author.avatar ? `https://cdn.discordapp.com/avatars/${m.author.id}/${m.author.avatar}.png` : '/Images/discordavatar.png' %>" class="rounded-full mr-3" height="32px" width="32px" alt="<%= m.author.name %>">
+                </span>
+                <div class="ml-2 font-medium">
+                  <p class="m-0 font-sans "><%= m.author.tag %></p>
+                  <p class="text-xs text-gray-700 font-sans"><%= (m.editedTimestamp ? moment(m.createdTimestamp).format("YYYY년 MM월 DD일 HH:mm:ss (수정됨)") : moment(m.createdTimestamp).format("YYYY년 MM월 DD일 a HH:mm:ss")).split(`am`).join(`오전`).split(`pm`).join(`오후`) %></p>
+                </div>
+            </div>
+            <div>
+              <div class="text-xl">
+                <%- m.content.replace(/\n/g, '</br>') %>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+
+    <%- include('../../../partials/space/footer'); %>
+</body>
+</html>
